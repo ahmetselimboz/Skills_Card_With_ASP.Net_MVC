@@ -1,0 +1,28 @@
+﻿@using YetenekKart.Models.Siniflar
+@model List<Yetenekler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>YETENEK</th>
+        <th>DEĞER</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Aciklama</td>
+            <td>@x.Deger</td>
+            <td><a href="/Admin/YetenekSil/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/YetenekGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+
